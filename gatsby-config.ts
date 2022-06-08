@@ -3,16 +3,22 @@ import type { GatsbyConfig } from "gatsby";
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Yours Truly, Dev`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://yourstruly.dev`
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins: ["gatsby-plugin-netlify-cms", {
-    resolve: 'gatsby-plugin-google-analytics',
+    resolve: 'gatsby-plugin-google-gtag',
     options: {
-      "trackingId": "G-LM6G3SGYWS"
+      trackingIds: [
+        "G-LM6G3SGYWS"
+      ],
+      gtagConfig: {
+        anonymize_ip: true,
+        cookie_expires: 0,
+      },
     }
   }, "gatsby-plugin-image", "gatsby-plugin-react-helmet", "gatsby-plugin-sitemap", {
     resolve: 'gatsby-plugin-manifest',
