@@ -15,8 +15,7 @@ const config: GatsbyConfig = {
       googleAnalytics: {
         trackingId: "G-LM6G3SGYWS",
         anonymize: true
-      },
-      environments: ['production', 'development']
+      }
     }
   }, "gatsby-plugin-image", "gatsby-plugin-react-helmet", "gatsby-plugin-sitemap", {
     resolve: 'gatsby-plugin-manifest',
