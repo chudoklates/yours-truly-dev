@@ -10,15 +10,12 @@ const config: GatsbyConfig = {
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins: ["gatsby-plugin-netlify-cms", {
-    resolve: 'gatsby-plugin-google-gtag',
+    resolve: `gatsby-plugin-gdpr-cookies`,
     options: {
-      trackingIds: [
-        "G-LM6G3SGYWS"
-      ],
-      gtagConfig: {
-        anonymize_ip: true,
-        cookie_expires: 0,
-      },
+      googleAnalytics: {
+        trackingId: "G-LM6G3SGYWS",
+        anonymize: true
+      }
     }
   }, "gatsby-plugin-image", "gatsby-plugin-react-helmet", "gatsby-plugin-sitemap", {
     resolve: 'gatsby-plugin-manifest',
