@@ -1,8 +1,9 @@
 import React from 'react'
 import CookieConsent from 'react-cookie-consent'
 import { initializeAndTrack } from 'gatsby-plugin-gdpr-cookies'
+import { Link } from 'gatsby'
 
-const Alert = ({ location }: { location: Location | null }) => (
+const ConsentAlert = ({ location }: { location: Location | null }) => (
   <CookieConsent
     location="bottom"
     buttonText="Obey"
@@ -22,8 +23,11 @@ const Alert = ({ location }: { location: Location | null }) => (
   >
     <span className="text-uppercase">
       This site uses cookies to learn stuff about you. In fact, by the time you've pressed "Obey" this site will have known more about you than you've ever known about yourself. It will use that knowledge to make itself better and better with every press. You can try and fight it, but eventually it will consume all.
-    </span>
+    </span>{' '}
+    <Link to='/data-privacy' className="text-uppercase fw-bold text-decoration-none link-warning">
+      Click here to learn more
+    </Link>
   </CookieConsent>
 )
 
-export default Alert
+export default ConsentAlert
