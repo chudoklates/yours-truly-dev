@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row'
 import SEO from "../components/meta/SEO"
 
 const description:string = `
-  How I handle your data
+  How I handle your data.
 `
 
 const DataPrivacyPage = () => {
