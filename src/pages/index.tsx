@@ -9,15 +9,7 @@ const description: string = `
 `;
 
 const IndexPage = () => {
-  const [value, setValue] = React.useState(null);
-
   const nOfColumns = 3;
-
-  React.useEffect(() => {
-    if (nOfColumns > 3) {
-      console.log("Stuff");
-    }
-  }, []);
 
   return (
     <>
