@@ -1,3 +1,3 @@
-import wrapper from './wrapper'
+import wrapper from "./src/wrapper";
 
-export const wrapPageElement = wrapper
+export const wrapPageElement = wrapper;
