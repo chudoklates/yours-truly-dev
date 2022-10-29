@@ -1,60 +1,60 @@
-import React from 'react'
-import { Helmet } from 'react-helmet'
+import React from 'react';
+import { Helmet } from 'react-helmet';
 
 type MetaTag = {
-  name?: string
-  content: string
-  property?: string
-}
+  name?: string;
+  content: string;
+  property?: string;
+};
 
 type SEOProps = {
-  title: string
-  description: string
-  meta?: MetaTag[]
-}
+  title: string;
+  description: string;
+  meta?: MetaTag[];
+};
 
-const SEO = ({
-  title,
-  meta,
-  description
-}: SEOProps) => {
-  const defaultMeta:MetaTag[] = [
+function SEO({ title, meta, description }: SEOProps) {
+  const defaultMeta: MetaTag[] = [
     {
-      name: `description`,
+      name: 'description',
       content: description,
     },
     {
-      property: `og:title`,
+      property: 'og:title',
       content: title,
     },
     {
-      property: `og:description`,
+      property: 'og:description',
       content: description,
     },
     {
-      property: `og:type`,
-      content: `website`,
+      property: 'og:type',
+      content: 'website',
     },
     {
-      name: `twitter:card`,
-      content: `summary`,
+      name: 'twitter:card',
+      content: 'summary',
     },
     {
-      name: `twitter:title`,
+      name: 'twitter:title',
       content: title,
     },
     {
-      name: `twitter:description`,
+      name: 'twitter:description',
       content: description,
     },
-  ]
-  
+  ];
+
   return (
     <Helmet
       title={title}
       meta={meta ? defaultMeta.concat(meta) : defaultMeta}
     />
-  )
+  );
 }
 
-export default SEO
+export default SEO;
+
+SEO.defaultProps = {
+  meta: [],
+};
