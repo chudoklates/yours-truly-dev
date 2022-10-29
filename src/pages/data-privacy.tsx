@@ -1,18 +1,18 @@
-import * as React from "react";
-import Row from "react-bootstrap/Row";
-import SEO from "../components/meta/SEO";
+import * as React from 'react';
+import Row from 'react-bootstrap/Row';
+import SEO from '../components/meta/SEO';
 
 const description: string = `
   How I handle your data.
 `;
 
-const DataPrivacyPage = () => {
+function DataPrivacyPage() {
   return (
     <>
       <SEO title="Yours Truly, Dev" description={description} />
       <Row
         style={{
-          margin: "5vh 0",
+          margin: '5vh 0',
         }}
         className="text-uppercase"
       >
@@ -38,6 +38,6 @@ const DataPrivacyPage = () => {
       </Row>
     </>
   );
-};
+}
 
 export default DataPrivacyPage;
