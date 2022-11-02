@@ -10,14 +10,12 @@ type LayoutProps = {
 
 function Layout({ children }: LayoutProps) {
   return (
-    <React.Fragment>
-      <Stack gap={3} style={{ height: '100vh' }}>
-        <main>
-          <Container>{children}</Container>
-        </main>
-        <Footer />
-      </Stack>
-    </React.Fragment>
+    <Stack gap={3} style={{ height: '100vh' }}>
+      <main>
+        <Container>{children}</Container>
+      </main>
+      <Footer />
+    </Stack>
   );
 }
 
