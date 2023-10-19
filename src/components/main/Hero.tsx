@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 
 const Hero = () => {
   return (
-    <div style={{ display: 'grid', maxHeight: 600, overflow: 'hidden' }}>
+    <div style={{ display: 'grid', height: 600, overflow: 'hidden' }}>
       <StaticImage
         src={`../../images/background.webp`}
         layout="fullWidth"
