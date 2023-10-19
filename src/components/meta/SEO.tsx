@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 
 type MetaTag = {
   name?: string;
@@ -13,7 +12,7 @@ type SEOProps = {
   meta?: MetaTag[];
 };
 
-function SEO({ title, meta, description }: SEOProps) {
+const SEO = ({ title, meta = [], description }: SEOProps) => {
   const defaultMeta: MetaTag[] = [
     {
       name: 'description',
@@ -45,13 +44,17 @@ function SEO({ title, meta, description }: SEOProps) {
     },
   ];
 
+  const tags = defaultMeta.concat(meta);
+
   return (
-    <Helmet
-      title={title}
-      meta={meta ? defaultMeta.concat(meta) : defaultMeta}
-    />
+    <>
+      <title>{title}</title>
+      {tags.map((tag) => (
+        <meta key={tag.name || tag.property} {...tag} />
+      ))}
+    </>
   );
-}
+};
 
 export default SEO;
 
