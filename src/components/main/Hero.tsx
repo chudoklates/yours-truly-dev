@@ -5,14 +5,13 @@ import Col from 'react-bootstrap/Col';
 
 const Hero = () => {
   return (
-    <div style={{ display: 'grid', maxHeight: 600 }}>
+    <div style={{ display: 'grid', maxHeight: 600, overflow: 'hidden' }}>
       <StaticImage
         src={`../../images/background.webp`}
         layout="fullWidth"
         objectFit="cover"
         alt=""
         style={{ gridArea: '1/1' }}
-        height={600}
       />
       <div
         style={{ gridArea: '1/1', position: 'relative' }}
