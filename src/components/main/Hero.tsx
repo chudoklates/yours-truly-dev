@@ -12,6 +12,7 @@ const Hero = () => {
         objectFit="cover"
         alt=""
         style={{ gridArea: '1/1' }}
+        height={600}
       />
       <div
         style={{ gridArea: '1/1', position: 'relative' }}
