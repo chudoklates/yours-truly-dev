@@ -17,7 +17,7 @@ const FooterNav: React.FC<FooterNavProps> = ({ children, href }) => {
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-light text-uppercase text-muted">
+    <footer className="bg-light text-uppercase text-muted fixed-bottom">
       <section>
         <Container className="mt-5 d-flex justify-content-sm-between">
           <div className="d-flex align-items-center">

@@ -11,9 +11,7 @@ type LayoutProps = {
 function Layout({ children }: LayoutProps) {
   return (
     <Stack gap={3} style={{ height: '100vh' }}>
-      <main>
-        <Container>{children}</Container>
-      </main>
+      {children}
       <Footer />
     </Stack>
   );
