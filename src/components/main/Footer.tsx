@@ -1,16 +1,19 @@
 import { Link } from 'gatsby';
 import * as React from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Col, Row } from 'react-bootstrap';
 
 interface FooterNavProps {
   children: React.ReactNode;
   href: string;
+  label?: string;
 }
 
-const FooterNav: React.FC<FooterNavProps> = ({ children, href }) => {
+const FooterNav: React.FC<FooterNavProps> = ({ children, href, label }) => {
   return (
     <div className="p-3">
-      <Link to={href}>{children}</Link>
+      <Link to={href} {...(label && { 'aria-label': label })}>
+        {children}
+      </Link>
     </div>
   );
 };
@@ -18,28 +21,34 @@ const FooterNav: React.FC<FooterNavProps> = ({ children, href }) => {
 const Footer: React.FC = () => {
   return (
     <footer className="bg-light text-uppercase text-muted fixed-bottom">
-      <section>
-        <Container className="mt-5 d-flex justify-content-sm-between">
-          <div className="d-flex align-items-center">
+      <Container className="mt-5">
+        <Row>
+          <Col className="d-flex align-items-center justify-content-center">
             <strong>Socials: </strong>
-            <FooterNav href="https://www.linkedin.com/in/wjagiel/">
+            <FooterNav
+              href="https://www.linkedin.com/in/wjagiel/"
+              label="LinkedIn Profile"
+            >
               <i className="fab fa-linkedin fs-3" />
             </FooterNav>
-            <FooterNav href="https://github.com/chudoklates">
+            <FooterNav
+              href="https://github.com/chudoklates"
+              label="Github Profile"
+            >
               <i className="fab fa-github fs-3" />
             </FooterNav>
-          </div>
-          <div className="d-flex">
+          </Col>
+          <Col className="d-flex">
             <FooterNav href="https://github.com/chudoklates/yours-truly-dev">
               <i className="fab fa-github" /> View source code
             </FooterNav>
             <FooterNav href="/data-privacy">Data Privacy</FooterNav>
-          </div>
-        </Container>
-      </section>
+            <FooterNav href="/imprint">Imprint</FooterNav>
+          </Col>
+        </Row>
+      </Container>
       <div className="p-4 text-center">
-        <strong>© {new Date().getFullYear()}</strong> Yours Truly, Dev -
-        Wojciech Jagielnicki
+        <strong>© 2022</strong> Yours Truly, Dev - Wojciech Jagielnicki
       </div>
     </footer>
   );

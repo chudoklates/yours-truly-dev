@@ -6,7 +6,7 @@ import { Link } from 'gatsby';
 function ConsentAlert({ location }: { location: Location | null }) {
   return (
     <CookieConsent
-      location="bottom"
+      location="top"
       buttonText="Obey"
       enableDeclineButton
       declineButtonText="Resist"
